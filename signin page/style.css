@@ -1,0 +1,22 @@
+body {
+  text-align: center;
+  font-family: sans-serif;
+  height: 1000px;
+  width: 500px;
+}
+
+h1,
+p {
+  color: red;
+  size: 20px;
+  text-align: center;
+}
+.inputs {
+  color: green;
+  text-align: center;
+  line-height: 30px;
+}
+.btn {
+  padding-top: 10px;
+  color: red;
+}
