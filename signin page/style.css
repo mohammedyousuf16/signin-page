@@ -1,22 +1,64 @@
-body {
-  text-align: center;
+* {
   font-family: sans-serif;
-  height: 1000px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 20px;
+  background-color: lightgray;
+  height: 100vh;
+  border: 5px solid rgb(25, 109, 24);
+}
+.container {
+  border-top: 5px solid rebeccapurple;
+  background-color: rgb(255, 255, 255);
+  margin: 50px auto;
   width: 500px;
+  padding: 25px;
+  box-shadow: 0 0 70px 15px rgba(0, 0, 0, 0.5);
 }
 
-h1,
-p {
-  color: red;
-  size: 20px;
-  text-align: center;
-}
-.inputs {
-  color: green;
-  text-align: center;
-  line-height: 30px;
-}
 .btn {
-  padding-top: 10px;
-  color: red;
+  font-size: 20px;
+}
+.container h2 {
+  font-size: 35px;
+  text-align: center;
+  line-height: 27px;
+  text-transform: uppercase;
+  padding: 30px;
+}
+
+.input-name {
+  text-transform: uppercase;
+  text-align: center;
+  width: 90%;
+  color: pink;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 20px auto;
+}
+.txt1 {
+  margin-right: 35px;
+}
+.txt {
+  margin-right: 30px;
+}
+.txt2 {
+  margin-right: 40px;
+}
+#pwd {
+  color: rebeccapurple;
+  margin-right: 35px;
+}
+
+.container p {
+  font-size: 15px;
+}
+.phone {
+  color: aquamarine;
+}
+.field {
+  height: 30px;
 }
