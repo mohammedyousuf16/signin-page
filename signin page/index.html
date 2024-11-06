@@ -7,20 +7,36 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container">
-      <h2 class="title">Registration Form</h2>
-      <form>
+    <!-- Registration Container-->
+    <div class="container" id="regg">
+      <h2 id="title">Registration Form</h2>
+      <form name="reg" onsubmit="return register()">
         <div class="input-name">
-          <label class="txt1">Name </label>
-          <input type="text" placeholder="Full Name" class="field field-name" />
+          <label class="name">Name </label>
+          <input
+            type="text"
+            placeholder="Full Name"
+            class="field field-name"
+            name="namebox"
+          />
         </div>
         <div class="input-name">
-          <label class="txt">Phone </label>
-          <input type="text" placeholder="phone" class="field field-phone" />
+          <label class="phone">Phone </label>
+          <input
+            type="text"
+            placeholder="phone"
+            class="field field-phone"
+            name="phonebox"
+          /><span id="numlock"></span>
         </div>
         <div class="input-name">
-          <label class="txt2">Email </label>
-          <input type="email" placeholder="Email" class="field field-email" />
+          <label class="email">Email </label>
+          <input
+            type="email"
+            placeholder="Email"
+            class="field field-email"
+            name="emailbox"
+          />
         </div>
         <div class="input-name">
           <label id="pwd">Paswd </label>
@@ -28,13 +44,44 @@
             type="password"
             placeholder="password"
             class="field field-password"
+            name="pwdbox"
           />
         </div>
         <div class="input-name">
-          <input type="button" value="Register" class="btn" />
+          <input type="button" value="Register" class="btn" id="regButton" />
         </div>
       </form>
-      <p>Existing User <a href="login.html">click here</a></p>
+      <p>Existing User <a href="#log">click here</a></p>
+    </div>
+    <!-- Login Container-->
+    <!-- -->
+    <!-- -->
+    <div class="loginContainer">
+      <h2 class="title" id="log">Login Form</h2>
+      <form name="logs">
+        <div class="input-name">
+          <label class="txt2">Email </label>
+          <input
+            type="email"
+            placeholder="Email"
+            class="field field-emailL"
+            name="eml"
+          />
+        </div>
+        <div class="input-name">
+          <label id="pwd">Paswd </label>
+          <input
+            type="password"
+            placeholder="password"
+            class="field field-passwordL"
+            name="pas"
+          /><span id="plog"></span>
+        </div>
+        <div class="input-name">
+          <input type="button" value="Login" class="btn btnlog" id="logbtn" />
+        </div>
+        <p id="nuser">New user <a href="#regg">click here</a></p>
+      </form>
     </div>
     <script src="script.js"></script>
   </body>
