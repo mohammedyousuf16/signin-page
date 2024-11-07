@@ -1,0 +1,37 @@
+.loginContainer {
+  border-top: 5px solid rebeccapurple;
+  background-color: rgb(255, 255, 255);
+  margin: 50px auto;
+  width: 500px;
+  padding: 25px;
+  box-shadow: 0 0 70px 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 300px;
+}
+.loginContainer h2 {
+  text-align: center;
+  font-size: 35px;
+  line-height: 27px;
+  text-transform: uppercase;
+}
+.txt2 {
+  margin-right: 39px;
+}
+#nuser {
+  font-size: 15px;
+}
+.btn {
+  font-size: 20px;
+}
+
+.input-name {
+  text-transform: uppercase;
+  text-align: center;
+  width: 90%;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 20px auto;
+}
+#pwd {
+  margin-right: 30px;
+}

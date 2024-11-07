@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+#up,
+#in {
+  display: inline-block;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 2rem;
+}
+#up {
+  right: 1rem;
+}
+#in {
+  top: 70%;
+  left: 45%;
+}
+#up {
+  right: 45%;
+  top: 55%;
+}

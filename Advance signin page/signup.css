@@ -1,0 +1,61 @@
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 20px;
+  background-color: lightgray;
+  height: auto;
+}
+.container {
+  border-top: 5px solid rebeccapurple;
+  background-color: rgb(255, 255, 255);
+  margin: 50px auto;
+  width: 500px;
+  padding: 25px;
+  box-shadow: 0 0 70px 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 500px;
+}
+
+.btn:hover {
+  font-size: 25px;
+  color: green;
+  text-transform: uppercase;
+}
+.container h2 {
+  font-size: 35px;
+  text-align: center;
+  line-height: 27px;
+  text-transform: uppercase;
+  padding: 30px;
+}
+
+.input-name {
+  text-transform: uppercase;
+  text-align: center;
+  width: 90%;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 20px auto;
+}
+.name {
+  margin-right: 35px;
+}
+.phone,
+#pwd {
+  margin-right: 30px;
+}
+.email {
+  margin-right: 40px;
+}
+
+.container p {
+  font-size: 15px;
+}
+
+.field {
+  height: 30px;
+}

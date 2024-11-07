@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="login.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in</title>
+  </head>
+  <body>
+    <div class="loginContainer">
+      <h2 class="title" id="log">Login Form</h2>
+      <form name="logs">
+        <div class="input-name">
+          <label class="txt2">Email </label>
+          <input
+            type="email"
+            placeholder="Email"
+            class="field field-emailL"
+            name="eml"
+          />
+        </div>
+        <div class="input-name">
+          <label id="pwd">Paswd </label>
+          <input
+            type="password"
+            placeholder="password"
+            class="field field-passwordL"
+            name="pas"
+          /><span id="plog"></span>
+        </div>
+        <div class="input-name">
+          <input type="button" value="Login" class="btn btnlog" id="logbtn" />
+        </div>
+        <p id="nuser">New user <a href="signup.html">click here</a></p>
+      </form>
+    </div>
+  </body>
+</html>
