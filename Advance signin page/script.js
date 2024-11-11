@@ -60,33 +60,6 @@ if (pageTitle === "Register") {
       console.log("bad password");
     }
 
-    // const specialChar = "!@#$%&*^";
-    // if (pass.length < 8 || pass.length > 20) {
-    //   console.log("Password must be 8-20 characters long");
-    // } else if (pass.includes(user) && pass.includes(email)) {
-    //   alert("password should not be same as user name");
-    // } else if (
-    //   pass === "12345678" ||
-    //   pass === "123123123" ||
-    //   pass === "password" ||
-    //   pass === "12341234" ||
-    //   pass === "00000000" ||
-    //   pass === "qwertyui"
-    // ) {
-    //   alert("password too week");
-    // }
-    // for (let char of pass) {
-    //   if (char >= "A" && char <= "Z") {
-    //     uppercase = true;
-    //   } else if (char >= "a" && char <= "z") {
-    //     lowercase = true;
-    //   } else if (char >= "0" && char <= "9") {
-    //     number = true;
-    //   } else if (specialChar.includes(char)) {
-    //     specialCha = true;
-    //   }
-    // }
-
     if (!(uppercase && lowercase && number && specialCha)) {
       alert(
         "Password must be 8-20 characters long, include uppercase and lowercase letters, a number, and a special character"
