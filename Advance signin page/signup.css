@@ -57,6 +57,30 @@ body {
 }
 
 .field {
-  height: 30px;
+  height: 35px;
   width: 8cm;
+}
+input:focus {
+  outline: none;
+}
+input + p {
+  opacity: 0;
+  height: 0;
+  color: rgb(248, 166, 13);
+}
+input.invalid + p {
+  opacity: 1;
+  height: auto;
+  margin-top: 14px;
+}
+
+.valid {
+  border: 4px solid rgb(58, 194, 58);
+  width: 8cm;
+  height: 35px;
+}
+.invalid {
+  border: 4px solid rgb(248, 166, 13);
+  width: 8cm;
+  height: 35px;
 }

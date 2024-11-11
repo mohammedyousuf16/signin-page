@@ -15,7 +15,7 @@ if (pageTitle === "Register") {
 
       userB = true;
     } else {
-      console.log("bad");
+      alert("Enter valid user name");
     }
   }
   // Function for phone number validations
@@ -25,7 +25,7 @@ if (pageTitle === "Register") {
       phoneNo = phone;
       phoneB = true;
     } else {
-      console.log("bad");
+      alert("please enter valid phone number");
     }
   }
   // Function for email validation
@@ -37,7 +37,7 @@ if (pageTitle === "Register") {
       sessionStorage.emailSS = email;
       emailB = true;
     } else {
-      console.log("bad e");
+      alert("invalid email address");
     }
   }
   // Function for password validation
@@ -51,13 +51,10 @@ if (pageTitle === "Register") {
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&*])[A-Za-z\d@#$%^&*]{8,20}$/;
 
     if (regexPwd.test(pass)) {
-      console.log("good password");
       uppercase = true;
       lowercase = true;
       number = true;
       specialCha = true;
-    } else {
-      console.log("bad password");
     }
 
     if (!(uppercase && lowercase && number && specialCha)) {
@@ -66,17 +63,36 @@ if (pageTitle === "Register") {
       );
     } else {
       pwdCode = pass;
-      console.log(pwdCode);
       sessionStorage.pwdSS = pass;
       pwdB = true;
     }
   }
+  const patten = {
+    name: /^[A-Za-z\s'-]{1,50}$/,
+    phone: /^(\+?[\(\)\d\s-]){10,15}$/,
+    email: /^([a-z\d-\.]+)@([a-z\d-]+)\.([a-z]{2,5})(\.[a-z]{2,5})?$/,
+    pwd: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&*])[A-Za-z\d@#$%^&*]{8,20}$/,
+  };
+  const inputs = document.querySelectorAll("input");
+  function validateOnSpot(field, regex) {
+    if (regex.test(field.value)) {
+      field.className = "valid";
+    } else {
+      field.className = "invalid";
+    }
+  }
+
+  inputs.forEach((input) => {
+    input.addEventListener("keyup", (e) => {
+      validateOnSpot(e.target, patten[e.target.attributes.name.value]);
+    });
+  });
 
   document.getElementById("regButton").onclick = function regButton() {
-    const name = document.reg.namebox.value;
-    const phone = document.reg.phonebox.value;
-    const email = document.reg.emailbox.value;
-    const pwd = document.reg.pwdbox.value;
+    const name = document.reg.name.value;
+    const phone = document.reg.phone.value;
+    const email = document.reg.email.value;
+    const pwd = document.reg.pwd.value;
 
     validateName(name);
     if (userB === true) {
