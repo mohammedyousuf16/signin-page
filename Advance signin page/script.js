@@ -92,7 +92,7 @@ if (pageTitle === "Register") {
     const specialChar = "!@#$%&*^";
     if (pass.length < 8 || pass.length > 20) {
       console.log("Password must be 8-20 characters long");
-    } else if (pass === user) {
+    } else if (pass.includes(user) && pass.includes(email)) {
       alert("password should not be same as user name");
     } else if (
       pass === "12345678" ||
