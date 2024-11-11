@@ -8,115 +8,86 @@ let userB, phoneB, emailB, pwdB;
 const pageTitle = document.title;
 
 if (pageTitle === "Register") {
-  function nameValidate(userName) {
-    if (userName.length < 2 || userName.length > 50) {
-      alert("invalid Username: atleast 2 characters");
-    } else if (userName.length > 1 && userName.length < 50) {
-      let userValid = false;
-      for (let char of userName) {
-        if (
-          !(
-            char === " " ||
-            char === "-" ||
-            char === "'" ||
-            (char >= "a" && char <= "z") ||
-            (char >= "A") & (char <= "Z")
-          )
-        ) {
-          alert(
-            "invalid username: username contains number or special characters"
-          );
-        } else {
-          userValid = true;
-        }
-      }
-      if (userValid === true) {
-        user = userName;
-        console.log(user);
-        userB = true;
-      }
+  function validateName(userName) {
+    const regexName = /^[A-Za-z\s'-]{1,50}$/;
+    if (regexName.test(userName)) {
+      user = userName;
+
+      userB = true;
+    } else {
+      console.log("bad");
     }
   }
   // Function for phone number validations
-  function phoneValidate(phone) {
-    if (phone.length < 10 || phone.length > 15) {
-      alert("please enter valid phone number");
-    }
-    for (let char of phone) {
-      if (
-        !(
-          char === "+" ||
-          char === "(" ||
-          char === ")" ||
-          char === "-" ||
-          char === " " ||
-          (char >= "0" && char <= "9")
-        )
-      ) {
-        alert("please enter valid phone number");
-      } else {
-        phoneNo = phone;
-        console.log(phoneNo);
-        phoneB = true;
-      }
+  function validatePhone(phone) {
+    const regexPhone = /^(\+?[\(\)\d\s-]){10,15}$/;
+    if (regexPhone.test(phone)) {
+      phoneNo = phone;
+      phoneB = true;
+    } else {
+      console.log("bad");
     }
   }
   // Function for email validation
-  function emailValidate(email) {
-    if (email.length > 254) {
-      alert("please enter valid email address");
-    } else if (
-      !email.includes("@") ||
-      !(
-        email.includes(".com") ||
-        email.includes(".org") ||
-        email.includes(".in")
-      )
-    ) {
-      alert("invalid email address");
-    } else if (email.startsWith(" ") || email.endsWith(" ")) {
-      alert("invalid email address");
-    } else {
+  function validateEmail(email) {
+    const regexEmail =
+      /^([a-z\d-\.]+)@([a-z\d-]+)\.([a-z]{2,5})(\.[a-z]{2,5})?$/;
+    if (regexEmail.test(email)) {
       emailId = email;
-      console.log(emailId);
       sessionStorage.emailSS = email;
       emailB = true;
+    } else {
+      console.log("bad e");
     }
   }
   // Function for password validation
-  function pwdValidate(pass) {
-    let u = false,
-      l = false,
-      n = false,
-      spe = false;
-    const specialChar = "!@#$%&*^";
-    if (pass.length < 8 || pass.length > 20) {
-      console.log("Password must be 8-20 characters long");
-    } else if (pass.includes(user) && pass.includes(email)) {
-      alert("password should not be same as user name");
-    } else if (
-      pass === "12345678" ||
-      pass === "123123123" ||
-      pass === "password" ||
-      pass === "12341234" ||
-      pass === "00000000" ||
-      pass === "qwertyui"
-    ) {
-      alert("password too week");
-    }
-    for (let char of pass) {
-      if (char >= "A" && char <= "Z") {
-        u = true;
-      } else if (char >= "a" && char <= "z") {
-        l = true;
-      } else if (char >= "0" && char <= "9") {
-        n = true;
-      } else if (specialChar.includes(char)) {
-        spe = true;
-      }
+  function validatepwd(pass) {
+    let uppercase = false,
+      lowercase = false,
+      number = false,
+      specialCha = false;
+
+    const regexPwd =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&*])[A-Za-z\d@#$%^&*]{8,20}$/;
+
+    if (regexPwd.test(pass)) {
+      console.log("good password");
+      uppercase = true;
+      lowercase = true;
+      number = true;
+      specialCha = true;
+    } else {
+      console.log("bad password");
     }
 
-    if (!(u && l && n && spe)) {
+    // const specialChar = "!@#$%&*^";
+    // if (pass.length < 8 || pass.length > 20) {
+    //   console.log("Password must be 8-20 characters long");
+    // } else if (pass.includes(user) && pass.includes(email)) {
+    //   alert("password should not be same as user name");
+    // } else if (
+    //   pass === "12345678" ||
+    //   pass === "123123123" ||
+    //   pass === "password" ||
+    //   pass === "12341234" ||
+    //   pass === "00000000" ||
+    //   pass === "qwertyui"
+    // ) {
+    //   alert("password too week");
+    // }
+    // for (let char of pass) {
+    //   if (char >= "A" && char <= "Z") {
+    //     uppercase = true;
+    //   } else if (char >= "a" && char <= "z") {
+    //     lowercase = true;
+    //   } else if (char >= "0" && char <= "9") {
+    //     number = true;
+    //   } else if (specialChar.includes(char)) {
+    //     specialCha = true;
+    //   }
+    // }
+
+    if (!(uppercase && lowercase && number && specialCha)) {
       alert(
         "Password must be 8-20 characters long, include uppercase and lowercase letters, a number, and a special character"
       );
@@ -134,15 +105,15 @@ if (pageTitle === "Register") {
     const email = document.reg.emailbox.value;
     const pwd = document.reg.pwdbox.value;
 
-    nameValidate(name);
+    validateName(name);
     if (userB === true) {
-      phoneValidate(phone);
+      validatePhone(phone);
     }
     if (phoneB === true) {
-      emailValidate(email);
+      validateEmail(email);
     }
     if (emailB === true) {
-      pwdValidate(pwd);
+      validatepwd(pwd);
     }
 
     if (userB && phoneB && emailB && pwdB) {
