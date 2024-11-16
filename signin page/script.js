@@ -41,3 +41,5 @@ document.getElementById("logbtn").onclick = function () {
     alert("wrong password");
   }
 };
+
+//functions
