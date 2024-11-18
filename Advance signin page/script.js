@@ -125,3 +125,4 @@ if (pageTitle === "Register") {
     }
   };
 }
+// this line added
